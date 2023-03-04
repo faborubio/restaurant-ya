@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/foto-gratis/camarero-feliz-sirviendo-comida-grupo-amigos-alegres-pub_637285-12525.jpg);">
+<div class="bannerlw" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/foto-gratis/camarero-feliz-sirviendo-comida-grupo-amigos-alegres-pub_637285-12525.jpg);">
   <div class="container">
     <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
     <p>Change your life and learn to code at one of our campuses around the world.</p>
@@ -48,14 +48,14 @@
 
         <div class="card">
           <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1604135307399-86c6ce0aba8e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80">
+            <%= image_tag food.photo %>
           </div>
           <div class="card-text">
-            <p class="card-meal-type">Breakfast/Eggs</p>
-            <h2 class="card-title">Délicieux Bénédicte</h2>
-            <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of garden herbs.</p>
+            <p class="card-meal-type"><%= food.name %></p>
+            <h2 class="card-title"><%= food.restaurant.name %></h2>
+            <p class="card-body"><%= food.description %></p>
           </div>
-          <div class="card-price">$56</div>
+          <div class="card-price"><%= number_to_currency(food.price, precision: 0, unit: "CLP $") %></div>
         </div>
       </div>
       <% end %>
